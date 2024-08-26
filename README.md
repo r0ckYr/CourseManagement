@@ -1,4 +1,4 @@
-# Course Management Application
+# Course Management Backend
 
 This repository contains a full-stack application for managing courses. It includes a backend API developed with Spring Boot, a frontend application developed with React, and uses PostgreSQL as the database. The application is containerized using Docker and orchestrated with Docker Compose.
 
@@ -34,11 +34,11 @@ This repository contains a full-stack application for managing courses. It inclu
 
 
 ### Configuration
-* **Database Configuration**: The PostgreSQL database will be initialized with a database named coursemanagement.
-* **Backend Configuration**: The backend service connects to the PostgreSQL database using environment variables defined in the docker-compose.yml file.
+* **Database Configuration**: The PostgreSQL database will be initialized with a database named ```coursemanagement```.
+* **Backend Configuration**: The backend service connects to the PostgreSQL database using environment variables defined in the ```docker-compose.yml``` file.
 
 
-## Stand Alone Backend (Docker) 
+## Standalone Backend 
 1. Clone the repo : ```https://github.com/r0ckYr/CourseManagement.git```
 2. ```cd CouresManagement```
 3. ```mvn clean install```

@@ -55,9 +55,16 @@ public class CourseController {
     }
 
     @PostMapping("/instances")
-    public ResponseEntity<CourseInstance> createCourseInstance(@RequestBody CourseInstance courseInstance) {
-        CourseInstance savedInstance = courseService.createCourseInstance(courseInstance);
-        return new ResponseEntity<>(savedInstance, HttpStatus.CREATED);
+    public ResponseEntity<Map<String, String>> createCourseInstance(@RequestBody CourseInstance courseInstance) {
+        try {
+            CourseInstance savedInstance = courseService.createCourseInstance(courseInstance);
+        }
+        catch(Exception e){
+            Map<String, String> response = new HashMap<>();
+            response.put("error", e.getMessage());
+            return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @GetMapping("/instances/{year}/{semester}")

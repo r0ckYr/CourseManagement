@@ -35,6 +35,12 @@ public class CourseService {
     }
 
     public CourseInstance createCourseInstance(CourseInstance courseInstance) {
+        CourseInstance existingInstance = courseInstanceRepository
+                .findByYearAndSemesterAndCourseId(courseInstance.getYear(), courseInstance.getSemester(), courseInstance.getCourse().getId());
+
+        if (existingInstance!=null) {
+            throw new RuntimeException("A similar Course Instance already exists.");
+        }
         return courseInstanceRepository.save(courseInstance);
     }
 

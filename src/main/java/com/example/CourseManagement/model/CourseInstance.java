@@ -16,4 +16,18 @@ public class CourseInstance {
     @ManyToOne
     @JoinColumn(name = "course_id", nullable = false)
     private Course course;
+
+
+    public int getYear() {
+        return year;
+    }
+
+    public int getSemester() {
+        return semester;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+
 }

@@ -46,6 +46,10 @@ public class CourseService {
         return courseInstanceRepository.findByYearAndSemesterAndCourseId(year, semester, courseId);
     }
 
+    public List<CourseInstance> getAllCourseInstances(){
+        return courseInstanceRepository.findAll();
+    }
+
     public void deleteCourseInstance(int year, int semester, Long courseId) {
         CourseInstance instance = courseInstanceRepository.findByYearAndSemesterAndCourseId(year, semester, courseId);
         if (instance != null) {

@@ -48,12 +48,6 @@ public class CourseController {
         }
     }
 
-
-    @GetMapping("/instances")
-    public List<CourseInstance> getAllInstances() {
-        return courseService.getAllCourseInstances();
-    }
-
     @PostMapping("/instances")
     public ResponseEntity<Map<String, String>> createCourseInstance(@RequestBody CourseInstance courseInstance) {
         try {
